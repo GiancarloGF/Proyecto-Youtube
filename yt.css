@@ -13,7 +13,7 @@ a{
     color: #000;
 }
 
-.container{
+.contenedor{
     width: 100%;
     min-height: 100vh;
     display: grid;
@@ -27,10 +27,17 @@ a{
 }
 
 
-.container.active{
+.contenedor.active{
     grid-template-columns:300px auto;
+    /* transition: all 1s ease; */
 }
+
+
+
 /* -------HEADER------------ */
+
+
+
 .header{
     grid-area: header;
     padding: 0 20px;
@@ -155,15 +162,51 @@ a{
     border-radius: 100px;
 } 
 
-/* aqui me quede, terminamos todo el header */
+/* ----Menu Lateral----- */
 
 
 
-.nav-later{
+.menu-lateral{
     grid-area: menu;
-    background-color: brown;
+    overflow: hidden;
+    
 }
 
+.menu-lateral a{
+    display: block;
+    padding:15PX 35px;
+    color:#000;
+    min-width: 800px;
+}
+
+.menu-lateral a:hover{
+    background: #e5e5e5;
+}
+
+.menu-lateral a.active{
+    background: #e5e5e5;
+    font-weight: bold;
+}
+
+.menu-lateral .fas{
+    color:#606060;
+    margin-right: 35px;
+    width: 20px;
+    text-align: center;
+}
+
+.menu-lateral a.active .fas{
+    color:#ff0000;
+}
+
+.menu-lateral hr{
+    margin: 20px 0;
+    border:1px solid #dfdfdf;
+}
+
+
+
+/* ----Contenido principal---- */
 .main{
     grid-area: contenido;
     background-color: chocolate;
