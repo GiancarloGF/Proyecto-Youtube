@@ -17,7 +17,7 @@ a{
     width: 100%;
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 90px auto;
+    grid-template-columns: minmax(90px,90px) auto; /*para que funcione la transicion*/
     margin: 0 auto;
     grid-template-rows: 60px auto;
     grid-template-areas: "header header"
@@ -28,7 +28,7 @@ a{
 
 
 .contenedor.active{
-    grid-template-columns:300px auto;
+    grid-template-columns:minmax(210px,17%) auto;/*para establecer un tamaño minimo*/
     /* transition: all 1s ease; */
 }
 
@@ -233,5 +233,61 @@ a{
 } 
 
 
+/* ---Media Queries--- */
+
+@media screen and (max-width:1200px){
+    .main .grid-videos{
+         grid-template-columns: repeat(3,1fr);
+    }
+
+    .header .contenedor-logo .logo span{
+        display:none;
+    }
+
+    .header .barra-busqueda input{
+        min-width: 70%;
+    }
+}
+
+
+@media screen and (max-width:992px){
+    .main .grid-videos{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media screen and (max-width:768px){
+    .contenedor{
+        grid-template-rows: auto;
+    }
+
+    .header{
+        padding: 20px;
+        grid-template-columns: auto auto;/*que tome el espacio necesario segun su contenido*/
+        justify-content: space-between;/*habra espacio en medio mandando a los extremos a las columnas*/
+        grid-template-areas: "logo iconos"
+                              " busqueda busqueda";/*cambiamos el grid del header*/
+        gap: 0;
+    }
+
+    .header .contenedor-logo .logo span{
+        display: inline;/*para que aparesca el nombre(span)*/
+    }
+
+    .header .barra-busqueda input{
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:576px){
+    .main .grid-videos{
+        grid-template-columns: 1fr;
+    }
+
+    .header .contenedor-logo .logo span{
+        display:none;/*volvemos a esconder el span*/
+    }
+}
 
 
