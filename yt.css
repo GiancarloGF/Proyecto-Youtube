@@ -209,7 +209,29 @@ a{
 /* ----Contenido principal---- */
 .main{
     grid-area: contenido;
-    background-color: chocolate;
+    background:#f9f9f9;
+    padding: 40px;
 }
+
+.main .titulo{
+    margin-bottom: 20px;
+}
+
+.main .grid-videos{
+    display: grid;
+    gap: 40px 20px;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.main .grid-videos .video{
+    width: 100%;/*para que tenga el 100% de 1 fr*/
+    display: block;
+}
+
+.main .grid-videos .video img{
+    width: 100%;/*para que tenga el 100% de una columna (1fr) y no lo establecido 500px*/
+} 
+
+
 
 
